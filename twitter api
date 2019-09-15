@@ -53,4 +53,4 @@ def get_all_tweets(screen_name):
 
 if __name__ == '__main__':
     #pass in the username of the account you want to download
-    get_all_tweets_with_images("@BU_Tweets")
+    get_all_tweets("@BU_Tweets")
