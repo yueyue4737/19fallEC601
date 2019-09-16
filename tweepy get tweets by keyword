@@ -13,7 +13,6 @@ import json
 import tweepy
 import json
 import twitter_credentials
-import wget
 
 def get_all_tweets(event):
 #Twitter API credentials
@@ -30,7 +29,7 @@ def get_all_tweets(event):
     while len(searched_tweets) < max_tweets:
         count = max_tweets - len(searched_tweets)
         try:
-            new_tweets = api.search(q=event, count=count, max_id=str(last_id - 1))
+            new_tweets = api.search(q=event+ '-filter:retweets', count=count, max_id=str(last_id - 1),Since="2019-09-09",tweet_mode="extended",include_rts =False,exclude_replies=True)
             if not new_tweets:
                 break
             searched_tweets.extend(new_tweets)
@@ -38,7 +37,8 @@ def get_all_tweets(event):
         except tweepy.TweepError as e:
             break
     print ("...{} tweets downloaded so far".format(len(searched_tweets)))
-    print(searched_tweets)
+    tweets = [[tweet.full_text] for tweet in searched_tweets]
+    print(tweets)
     #write tweet objects to JSON
     file = open('tweet.json', 'w')
     print ("Writing tweet objects to JSON please wait...")
