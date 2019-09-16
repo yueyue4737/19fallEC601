@@ -4,7 +4,6 @@
 import tweepy
 import json
 import twitter_credentials
-import wget
 
 def get_all_tweets(screen_name):
 #Twitter API credentials
