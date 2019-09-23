@@ -38,6 +38,7 @@ def get_all_tweets(event):
             break
     print ("...{} tweets downloaded so far".format(len(searched_tweets)))
     tweets = [[tweet.full_text] for tweet in searched_tweets]
+    
     print(tweets)
     #write tweet objects to JSON
     file = open('tweettext.json', 'w')
