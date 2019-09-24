@@ -13,7 +13,11 @@ i want to get tweets by keywords so i choose the api.search() to get what i need
 some numbers.
 9.test if the google natural language api can cooperate good with tweepy.
 10.package the codes into a .exe file.
+
+
 ![image](https://github.com/yueyue4737/19fallEC601MiniProject1Group16/blob/master/Untitled%20Diagram.png)
+
+
 User story
 As a event planning company i always want to improve the orgnization of some events.
 As a event planning company i always want to get feedback of some public events,such as a concert or a sports match,from the public.
